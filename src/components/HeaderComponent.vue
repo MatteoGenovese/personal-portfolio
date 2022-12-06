@@ -1,20 +1,23 @@
 <template>
-    <div>
-        <div class="collapse" id="navbarToggleExternalContent">
-            <div class="bg-dark p-4">
-                <h5 class="text-white h4">Collapsed content</h5>
-                <span class="text-muted">Toggleable via the navbar brand.</span>
-            </div>
+    <b-navbar id="nav-bar-custom" toggleable type="dark" variant="primary" >
+        <div class="container">
+            <b-navbar-brand href="#">Matteo Genovese</b-navbar-brand>
+        
+            <b-navbar-toggle target="navbar-toggle-collapse">
+                <template #default="{ expanded }">
+                <b-icon v-if="expanded" icon="chevron-bar-up"></b-icon>
+                <b-icon v-else icon="chevron-bar-down"></b-icon>
+                </template>
+            </b-navbar-toggle>
+        
+            <b-collapse id="navbar-toggle-collapse" is-nav>
+                <b-navbar-nav class="ml-auto">
+                <b-nav-item href="#">Link 1</b-nav-item>
+                <b-nav-item href="#">Link 2</b-nav-item>
+                </b-navbar-nav>
+            </b-collapse>
         </div>
-        <nav class="navbar navbar-dark bg-dark">
-            <div class="container-fluid">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
-        </nav>
-    </div>
-
+    </b-navbar>
 </template>
 
 <script>
@@ -23,6 +26,16 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+
+
+$primary-color-blue: #457B9D ;
+
+
+nav{
+    background-color: var($primary-color-blue) !important;
+}
+
+
 
 </style>

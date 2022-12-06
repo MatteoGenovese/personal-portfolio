@@ -9,6 +9,7 @@
 
 
 import HeaderComponent from "../src/components/HeaderComponent.vue"
+import BootstrapVue from "bootstrap-vue";
 
 export default {
   name: 'HelloWorld',
@@ -16,7 +17,8 @@ export default {
     msg: String
   },
   components:{
-    HeaderComponent
+    HeaderComponent,
+    BootstrapVue
   }
 }
 </script>
