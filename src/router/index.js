@@ -3,6 +3,8 @@ import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import HomePortfolio from '../views/HomePortfolio.vue'
 
+
+
 Vue.use(VueRouter)
 
 const routes = [{

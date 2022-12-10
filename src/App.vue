@@ -6,11 +6,8 @@
 </template>
 
 <script>
-
-
 import HeaderComponent from "../src/components/HeaderComponent.vue"
 import BootstrapVue from "bootstrap-vue";
-
 export default {
   name: 'HelloWorld',
   props: {
@@ -25,8 +22,24 @@ export default {
 
 
 <style lang="scss">
-
 @import "~bootstrap/scss/bootstrap.scss";
+
+.text-marked{
+  color:#1CB5E0;
+}
+
+.box{
+  min-height: 40rem;
+}
+
+section{
+  background-color:#eeeeee;
+  padding: 5rem 0;
+}
+
+section:nth-child(even){
+    background-color: white;
+}
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -35,14 +48,11 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
-
 nav {
   padding: 30px;
-
   a {
     font-weight: bold;
     color: #2c3e50;
-
     &.router-link-exact-active {
       color: #42b983;
     }

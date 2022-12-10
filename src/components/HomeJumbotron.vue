@@ -1,32 +1,22 @@
 <template>
-  <div>
+    <section id="jumbotron" class="box">
 
-      <div class="jumbotron container d-flex">
+        <div class="h-100 d-flex justify-content-center align-items-center align-content-center">
 
-          <div data-aos="fade-in" class="box d-flex">
-              <div class="d-flex w-100 align-items-center">
-                  <div data-aos="fade-left" class="d-flex flex-column w-100 justify-content-center">
-                      <h1 class="">
-                          Ciao, sono Matteo Genovese!
-                      </h1>
-                      <h2>
-                          Sono un programmatore, e questo è il mio portfolio.
-                      </h2>
-                  </div>
+            <div class="align-items-center">
+                <p>
+                    Hello, visitor.
+                </p>
 
-              </div>
-              <div class="d-flex w-100 align-items-center">
-                  <div data-aos="fade-right" class="d-flex flex-column w-100 justify-content-center">
-                      <img src="../assets/FotoLinkedin.jpeg" alt="" class="w-100 profile-photo">
-                  </div>
+                <h2>
+                    This is a PORTFOLIO of a full stack developer
+                </h2>
+            </div>
 
-              </div>
+        </div>
 
 
-          </div>
-
-      </div>
-  </div>
+    </section>
 </template>
 
 <script>
@@ -35,17 +25,31 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 
-.box{
 
-  height: 900px;
-  width: 100%;
-  justify-content:flex-start;
+
+#jumbotron {
+    background-color: #0c0c0c;
+    // background-image: linear-gradient(to right,  #0F2027, #203A43, #2C5364);
+
+    // background-image: linear-gradient(to right,  #005AA7, #FFFDE4);
+
+    background-image: linear-gradient(to right,  #0F2027, #1CB5E0 );
+
+
+
+    height: calc(100vh - 56px);
+
+
+
+    p, h1, h2{
+        color: #eeeeee;
+    }
 }
 
-.profile-photo{
-  clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+.profile-photo {
+    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
 }
 
-</style>
+</style>>
