@@ -37,6 +37,7 @@ section{
   padding: 5rem 0;
 }
 
+
 section:nth-child(even){
     background-color: white;
 }
