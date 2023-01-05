@@ -24,6 +24,10 @@ export default {
 <style lang="scss">
 @import "~bootstrap/scss/bootstrap.scss";
 
+p, div{
+  font-size: 1.2rem;
+}
+
 .text-marked{
   color:#1CB5E0;
 }
@@ -46,8 +50,12 @@ section:nth-child(even){
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  text-align:justify;
   color: #2c3e50;
+
+  h1{
+    text-align: center;
+  }
 }
 nav {
   padding: 30px;

@@ -47,7 +47,7 @@
 
                 <div class="d-flex align-items-center mx-5">
                     <div data-aos="fade-right" class="d-flex flex-column justify-content-center profile-photo">
-                        <img src="../assets/FotoLinkedin.jpeg" alt="" class="profile-photo-clip">
+                        <img :src="require(`../assets/FotoLinkedin.jpeg`)" alt="" class="profile-photo-clip">
                     </div>
                 </div>
 
@@ -59,6 +59,7 @@
 </template>
 
 <script>
+
 export default {
 
 }
@@ -76,7 +77,7 @@ export default {
     }
 
     .profile-photo{
-        height: 20rem;
+        height: 30rem;
     }
 
     .fa-code{
@@ -95,6 +96,8 @@ export default {
 }
 
 .profile-photo-clip {
+
+    width: 500px;
     clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
 }
 </style>

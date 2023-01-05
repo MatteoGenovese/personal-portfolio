@@ -1,29 +1,150 @@
 <template>
+    <div v-if="work.visible" class="wrapper" data-aos="fade-in">
+      <div class="single-card">
 
-    <div class="card mx-4 col-md-5" data-aos="fade-in" >
-      <a href="#" class="">
-      <div class="row g-0">
-        <div class="col-md-4">
-          <img src="../assets/netflix.jpg" class="img-fluid rounded-start " >
+        <div class="front">
+          <img :src="require(`../assets/works/${work.imageName}`)" alt="" class="img-fluid">
         </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title">Netflix</h5>
-            <p class="card-text">Questa è una riproduzione del sito di netflix, in qui viene chiamata tramite axios una API di movie.db. Il risultato è una ricerca di film e serie tv secondo quello che viene ricercato nella barra di ricerca. Il risultato è una collezione di card che possono essere voltate per ottenere dettagli sul contenuto ricercato.</p>
+
+        <div class="back d-flex flex-column justify-content-between">
+          <div class="content">
+            <h2>{{ work.title }}</h2>
+            <p>{{ work.description }}</p>
+
+          </div>
+          <div class="link">
+
+
+              <a v-if="work.webSiteLink" :href="work.webSiteLink" class="btn btn-info">
+                View more
+              </a>
+              <a v-else href="/comingsoon" class="btn btn-info">
+                View more
+              </a>
+
+              <a :href="work.gitHubLink" class="btn btn-primary ms-2">
+                GitHub link
+              </a>
+              <div class="tags">
+                Tags: 
+                <span v-for="(tag,index) in work.tags" :key="index" > 
+                  #{{tag}} 
+                </span>
+              </div>
           </div>
         </div>
-      </div>
-    </a>
-    </div>
 
+      </div>
+    </div>
 </template>
 
 <script>
+
+
 export default {
+
+  props: {
+    work: {
+      type: Object,
+      required: true
+    }
+  },
 
 }
 </script>
 
 <style lang="scss">
+
+
+.wrapper,
+.single-card {
+  height: 35rem;
+  margin: 2rem 0.5rem;
+}
+
+.wrapper {
+  perspective: 900px;
+}
+
+.link{
+  .tags{
+    margin-top: 0.5rem;
+  }
+}
+
+.single-card {
+  text-align: center;
+  transition: all 0.75s cubic-bezier(0.7, -.5, 0.3, 1.8);
+  transform-style: preserve-3d;
+
+
+  box-shadow: 20px -20px 20px  rgba(0, 0, 0, 0.255);
+  -moz-box-shadow: 10px -10px 5px  rgba(0, 0, 0, 0.255);
+  -webkit-box-shadow: 10px -10px 5px  rgba(0, 0, 0, 0.255);
+  -o-box-shadow: 10px -10px 5px  rgba(0, 0, 0, 0.255);
+  border-radius:5px;
+}
+
+.wrapper:hover .single-card {
+  transform: rotateY(180deg);
+}
+
+.front,
+.back {
+  height: 100%;
+
+  background-color: aquamarine;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  border-radius: 5px;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+
+  img{
+    width: 100%;
+    object-fit: contain;
+  }
+
+}
+
+.front {
+  cursor: pointer;
+  backface-visibility: hidden;
+  background-size: contain;
+  background-position: center center;
+
+}
+
+.back {
+  transform: rotateY(180deg);
+  position: absolute;
+  background-color:#eeeeee;
+  padding: 0.5rem;
+}
+
+.content {
+  padding-top: 5%;
+
+  h2 {
+  font-size: 35px;
+  margin: 0;
+  font-weight: 300;
+  }
+
+  p {
+    font-size: 1.1rem;
+    margin: 1rem 0;
+    font-weight: 300;
+  }
+}
+
+
+
+.content h4 {
+  margin: 0;
+}
+
 
 </style>
